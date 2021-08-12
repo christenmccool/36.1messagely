@@ -22,7 +22,6 @@ const User = require('../models/user')
 router.get('/:id', async (req, res, next) => {
     try {
         const message = await Message.get(req.params.id);
-        console.log(message.from_user, message.to_user, req.user);
         if (message.from_user.username !== req.user.username && message.to_user.username !== req.user.username) {
             throw new ExpressError("Unauthorized", 401);
         }
@@ -63,7 +62,6 @@ router.get('/:id', async (req, res, next) => {
             throw new ExpressError("Unauthorized", 401);
         }
         message = await Message.markRead(req.params.id);
-        console.log(message)
         return res.json({message});
     } catch(err) {
         return next(err);

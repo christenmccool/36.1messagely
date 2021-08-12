@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+
+
+<h1>Welcome to Messagely</h1>
+
+<h3>Sign Up</h3>
+<form class="m-5" id="signupForm">
+  <div class="row mb-3 d-flex justify-content-center">
+    <label for="inputUsername2" class="col-sm-2 col-form-label">Username</label>
+    <div class="col-sm-6">
+      <input type="text" name="username" class="form-control" id="inputUsername2">
+    </div>
+  </div>
+  <div class="row mb-3 d-flex justify-content-center">
+    <label for="inputPassword2" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-6">
+      <input type="password" name="password" class="form-control" id="inputPassword2">
+    </div>
+  </div>
+  <div class="row mb-3 d-flex justify-content-center">
+    <label for="inputFirst" class="col-sm-2 col-form-label">First Name</label>
+    <div class="col-sm-6">
+      <input type="text" name="firstname" class="form-control" id="inputFirst">
+    </div>
+  </div>
+  <div class="row mb-3 d-flex justify-content-center">
+    <label for="inputLast" class="col-sm-2 col-form-label">Last Name</label>
+    <div class="col-sm-6">
+      <input type="text" name="lastname" class="form-control" id="inputLast">
+    </div>
+  </div>
+  <div class="row mb-3 d-flex justify-content-center">
+    <label for="inputPhone" class="col-sm-2 col-form-label">Phone</label>
+    <div class="col-sm-6">
+      <input type="text" name="phone" class="form-control" id="inputPhone">
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-sm-8 d-flex justify-content-end">
+      <button type="submit" class="btn btn-primary" id="signupBtn">Sign Up</button>
+    </div>
+  </div>
+</form>
+
+<p>Already a member? <a href="/login">Log in!</a></p>
+
+
+{% endblock %}

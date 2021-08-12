@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block title %}Log In{% endblock %}
+{% block content %}
+
+
+<h1>Welcome to Messagely</h1>
+
+<h3>Log In</h3>
+<form class="m-5" id="loginForm">
+  <div class="row mb-3 d-flex justify-content-center">
+    <label for="inputUsername1" class="col-sm-2 col-form-label">Username</label>
+    <div class="col-sm-6">
+      <input type="text" name="username" class="form-control" id="inputUsername1">
+    </div>
+  </div>
+  <div class="row mb-3 d-flex justify-content-center">
+    <label for="inputPassword1" class="col-sm-2 col-form-label">Password</label>
+    <div class="col-sm-6">
+      <input type="password" name="password" class="form-control" id="inputPassword1">
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-sm-8 d-flex justify-content-end">
+      <button type="submit" class="btn btn-primary" id="loginBtn">Log in</button>
+    </div>
+  </div>
+</form>
+
+<p>Not a member? <a href="/signup">Sign up!</a></p>
+
+{% endblock %}

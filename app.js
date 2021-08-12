@@ -8,6 +8,13 @@ const { authenticateJWT } = require("./middleware/auth");
 const ExpressError = require("./expressError")
 const app = express();
 
+const nunjucks = require("nunjucks");
+nunjucks.configure("templates", {
+  autoescape: true,
+  express: app
+});
+
+
 // allow both form-encoded and json body parsing
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -18,15 +25,22 @@ app.use(cors());
 // get auth token for all routes
 app.use(authenticateJWT);
 
+// Serve static files from public directory
+app.use(express.static('public'))
+
 /** routes */
 
 const authRoutes = require("./routes/auth");
 const userRoutes = require("./routes/users");
 const messageRoutes = require("./routes/messages");
+const routes = require("./routes/routes");
+
 
 app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/messages", messageRoutes);
+app.use("/", routes);
+
 
 /** 404 handler */
 

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Messages{% endblock %}
+{% block content %}
+
+<h1>Messages</h1>
+
+<h3>Send a new message</h3>
+<form class="my-2" id="signupForm">
+  <div class="row my-3 d-flex justify-content-center">
+    <label for="inputToUsername" class="col-sm-2 col-form-label">To:</label>
+    <div class="col-sm-8">
+      <input type="text" name="to_username" class="form-control" id="inputToUsername">
+    </div>
+  </div>
+  <div class="row mb-3 d-flex justify-content-center">
+    <label for="inputBody" class="col-sm-2 col-form-label">Message</label>
+    <div class="col-sm-8">
+      <input type="text" name="body" class="form-control" id="inputBody">
+    </div>
+  </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-sm-10 d-flex justify-content-end">
+      <button type="submit" class="btn btn-primary" id="newMessageBtn">Send</button>
+    </div>
+  </div>
+</form>
+
+<div id="messageToDiv" class="d-none mt-5">
+  <h3>Inbox</h3>
+  <ul id="messageToList" class="list-group">
+  </ul>
+</div>
+
+<div id="messageFromDiv" class="d-none mt-5">
+  <h3>Sent</h3>
+  <ul id="messageFromList" class="list-group">
+  </ul>
+</div>
+
+{% endblock %}
+
